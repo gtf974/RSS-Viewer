@@ -1,0 +1,2 @@
+Ce fichier existe pour pouvoir ajouter le repertoire img vide sur le repository git.
+On ne peut pas add un dossier vide avec git.
