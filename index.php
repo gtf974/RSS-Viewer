@@ -9,8 +9,10 @@
 <body>
     <?php
         require_once("fonctions.php");
+        //HEADER
         displayHeader();        
     ?>
+    <!--Div regroupant les deux inputs (lien 1 et 2)-->
     <div id="input-boxes">
         <div class="input-box">
             <label for="rss1">Premier lien RSS</label>
@@ -29,30 +31,34 @@
             </form>
         </div>
     </div>
+    <!--CONTENU PRINCIPAL-->
     <div class="content">
+        <!--CONTENU DES ARTICLES A GAUCHE-->
         <div id="left-content"><?php
             if(isset($_POST["rss1"]) && !empty($_POST["rss1"])){
-                echo "<h1 class='centered'>".getTitle($_POST["rss1"])."</h1>";
+                echo "<h1 class='centered'>".getTitle($_POST["rss1"])."</h1>"; // Affichage du titre
                 try {
-                    getDataFromRSSURL($_POST["rss1"]);
+                    getDataFromRSSURL($_POST["rss1"]); // Affichage de l'article
                 } catch (Exception $err) {
                     echo "<h1>Erreur lors du fetch.</h1>";
                 }
             }
-            if(isset($_POST["memory-2"]) && !empty($_POST["memory-2"])) echo $_POST["memory-2"];
+            if(isset($_POST["memory-2"]) && !empty($_POST["memory-2"])) echo $_POST["memory-2"]; // Insertion du code html s'il a été stocké dans l'input invisible
         ?></div>
+        <!--CONTENU DES ARTICLES A DROITE-->
         <div id="right-content"><?php
             if(isset($_POST["rss2"]) && !empty($_POST["rss2"])){
-                echo "<h1 class='centered'>".getTitle($_POST["rss2"])."</h1>";
+                echo "<h1 class='centered'>".getTitle($_POST["rss2"])."</h1>"; // Affichage du titre
                 try {
-                    getDataFromRSSURL($_POST["rss2"]);
+                    getDataFromRSSURL($_POST["rss2"]); // Affichage du l'article
                 } catch (Exception $err) {
                     echo "<h1>Erreur lors du fetch.</h1>";
                 }
             }
-            if(isset($_POST["memory-1"]) && !empty($_POST["memory-1"])) echo $_POST["memory-1"];
+            if(isset($_POST["memory-1"]) && !empty($_POST["memory-1"])) echo $_POST["memory-1"]; // Insertion du code html s'il a été stocké dans l'input invisible
         ?></div>
     </div>
+    <!--FOOTER-->
     <?php displayFooter();?>
     <script src="index.js"></script>
 </body>

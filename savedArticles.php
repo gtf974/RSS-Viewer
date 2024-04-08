@@ -10,13 +10,15 @@
     <?php
         require_once("connexion.php");
         require_once("fonctions.php");
-        if(isset($_POST["toDelete"])){
+        // Présence d'un id provenant du formulaire de délétion
+        if(isset($_POST["toDelete"])){ 
             $article = getArticleById($cnx, $_POST["toDelete"]);
-            if(isset($article["img"])) unlink(substr($article["img"], 2));
+            if(isset($article["img"])) unlink(substr($article["img"], 2)); //on enlève le "./" devant le lien de l'image pour le supprimer
             deleteById($cnx, $_POST["toDelete"]);
         }
         displayHeader(true);
         $data = getAllArticles($cnx);
+        // Affichage des articles selon le même style que l'affichage des articles dans la page d'accueil
         echo "<div class='content flex-wrap'>";
         foreach ($data as $value) {
             echo "<fieldset class='saved-article pale-grey'>";
@@ -24,10 +26,10 @@
             echo "<p>".$value["description"]."</p>";
             echo '<div class="plus-button"><a href="'.$value["link"].'">Voir plus</a></div>';
             echo "<form method='POST' action='savedArticles.php'>";
-            echo '<input name="toDelete" type="hidden" value="'.$value["idArticle"].'">';
-            echo "<br><div class='delete-button'><a onclick='javascript:this.parentNode.parentNode.submit()'>Supprimer</a></div>";
+            echo '<input name="toDelete" type="hidden" value="'.$value["idArticle"].'">'; // input invisible contenant l'id de l'article à peut être supprimer
+            echo "<br><div class='delete-button'><a onclick='javascript:this.parentNode.parentNode.submit()'>Supprimer</a></div>"; // bouton supprimer qui envoie le formulaire
             echo "</form>";
-            if(!empty($value["img"])) echo "<div class='centered'><img src='".$value["img"]."'/></div>";
+            if(!empty($value["img"])) echo "<div class='centered'><img src='".$value["img"]."'/></div>"; // absence d'image dans la base de donnée
             echo "</fieldset>";
         }
         echo "</div>";
