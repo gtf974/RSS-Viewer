@@ -171,6 +171,7 @@ img{
     background-color: rgb(231, 231, 231);
 }
 
+/*FENETRE DE CONFIRMATION DE SUPPRESSION*/
 .delete-screen{
     z-index: 1000;
     position: absolute;

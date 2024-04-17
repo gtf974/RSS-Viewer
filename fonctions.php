@@ -114,7 +114,7 @@
      * @return void
      */
     function getDataFromRSSURL (String $link) : void{
-        if(!filter_var($link, FILTER_VALIDATE_URL)) return;
+        if(!filter_var($link, FILTER_VALIDATE_URL)) return; //check si l'input est bien une URL valide
         $elt = new SimpleXMLElement(file_get_contents($link));
         $nodes = $elt->xpath('channel/item');
         define("MAX_ELEMENT", 5);
