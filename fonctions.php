@@ -55,7 +55,7 @@
      * Récupère tous les articles
      *
      * @param  PDO $cnx
-     * @return PDOStatement
+     * @return array
      */
     function getAllArticles($cnx){
         return $cnx->query("SELECT * FROM archive")->fetchAll();
@@ -114,6 +114,7 @@
      * @return void
      */
     function getDataFromRSSURL (String $link) : void{
+        if(!filter_var($link, FILTER_VALIDATE_URL)) return;
         $elt = new SimpleXMLElement(file_get_contents($link));
         $nodes = $elt->xpath('channel/item');
         define("MAX_ELEMENT", 5);

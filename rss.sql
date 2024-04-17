@@ -36,17 +36,6 @@ CREATE TABLE `archive` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Déchargement des données de la table `archive`
---
-
-INSERT INTO `archive` (`idArticle`, `titre`, `description`, `link`, `img`) VALUES
-(8, 'Sur « Fortnite » et « Rocket League », des jeunes champions d’e-sport sacrés… mais jamais payés', 'Des dizaines de jeunes joueurs, vainqueurs de primes lors de tournois d’e-sport, dénoncent d’importants retards de versement de la part de l’éditeur américain Epic Games.', 'https://www.lemonde.fr/pixels/article/2024/03/31/sur-fortnite-et-rocket-league-des-champions-d-e-sport-sacres-mais-jamais-payes_6225239_4408996.html', NULL),
-(9, 'Niffleur Hogwarts Legacy : Où le capturer et trouver la version shiny ? Tout savoir sur la créature magique', 'Dans ce guide, on vous explique tout ce que vous devez savoir sur le Niffleur, l’une des quelques créatures issues de l’univers de Harry Potter, et plus précisément celui des Animaux Fantastiques, que vous pouvez récupérer dans Hogwarts Legacy. Comment réussir sa capture, récupérer des matériaux pour...', 'https://www.jeuxvideo.com/news/1868737/niffleur-hogwarts-legacy-lieu-de-capture-coloris-shiny-tout-savoir-sur-la-creature-magique.htm', './img/66103cbb13a4f.png'),
-(10, 'Niffleur Hogwarts Legacy : Où le capturer et trouver la version shiny ? Tout savoir sur la créature magique', 'Dans ce guide, on vous explique tout ce que vous devez savoir sur le Niffleur, l’une des quelques créatures issues de l’univers de Harry Potter, et plus précisément celui des Animaux Fantastiques, que vous pouvez récupérer dans Hogwarts Legacy. Comment réussir sa capture, récupérer des matériaux pour...', 'https://www.jeuxvideo.com/news/1868737/niffleur-hogwarts-legacy-lieu-de-capture-coloris-shiny-tout-savoir-sur-la-creature-magique.htm', NULL),
-(11, 'Netflix dévoile enfin son adaptation à la Jumanji d’un classique du jeu de société ! Les loups-garous seront de sortie pour Halloween ?', 'Il y a presque un an, à un bon mois près, Netflix faisait une annonce pour le moins étonnante. Après les adaptations d\'œuvres littéraires, de comics et de mangas, la plateforme se lance un nouveau défi : adapter un jeu de société ! L’idée est aussi originale que surprenante et, aujourd’hui, on a le droit...', 'https://www.jeuxvideo.com/news/1872483/netflix-devoile-enfin-son-adaptation-a-la-jumanji-d-un-classique-du-jeu-de-societe-les-loups-garous-seront-de-sortie-pour-halloween.htm', './img/66103d78a8cc9.png'),
-(12, 'Netflix dévoile enfin son adaptation à la Jumanji d’un classique du jeu de société ! Les loups-garous seront de sortie pour Halloween ?', 'Il y a presque un an, à un bon mois près, Netflix faisait une annonce pour le moins étonnante. Après les adaptations d\'œuvres littéraires, de comics et de mangas, la plateforme se lance un nouveau défi : adapter un jeu de société ! L’idée est aussi originale que surprenante et, aujourd’hui, on a le droit...', 'https://www.jeuxvideo.com/news/1872483/netflix-devoile-enfin-son-adaptation-a-la-jumanji-d-un-classique-du-jeu-de-societe-les-loups-garous-seront-de-sortie-pour-halloween.htm', NULL);
-
---
 -- Index pour les tables déchargées
 --
 

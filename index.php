@@ -36,24 +36,20 @@
         <!--CONTENU DES ARTICLES A GAUCHE-->
         <div id="left-content"><?php
             if(isset($_POST["rss1"]) && !empty($_POST["rss1"])){
-                echo "<h1 class='centered'>".getTitle($_POST["rss1"])."</h1>"; // Affichage du titre
                 try {
+                    echo "<h1 class='centered'>".getTitle($_POST["rss1"])."</h1>"; // Affichage du titre
                     getDataFromRSSURL($_POST["rss1"]); // Affichage de l'article
-                } catch (Exception $err) {
-                    echo "<h1>Erreur lors du fetch.</h1>";
-                }
+                } catch (Exception $err) {}
             }
             if(isset($_POST["memory-2"]) && !empty($_POST["memory-2"])) echo $_POST["memory-2"]; // Insertion du code html s'il a été stocké dans l'input invisible
         ?></div>
         <!--CONTENU DES ARTICLES A DROITE-->
         <div id="right-content"><?php
             if(isset($_POST["rss2"]) && !empty($_POST["rss2"])){
-                echo "<h1 class='centered'>".getTitle($_POST["rss2"])."</h1>"; // Affichage du titre
                 try {
+                    echo "<h1 class='centered'>".getTitle($_POST["rss2"])."</h1>"; // Affichage du titre
                     getDataFromRSSURL($_POST["rss2"]); // Affichage du l'article
-                } catch (Exception $err) {
-                    echo "<h1>Erreur lors du fetch.</h1>";
-                }
+                } catch (Exception $err) {}
             }
             if(isset($_POST["memory-1"]) && !empty($_POST["memory-1"])) echo $_POST["memory-1"]; // Insertion du code html s'il a été stocké dans l'input invisible
         ?></div>

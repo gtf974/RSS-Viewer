@@ -18,17 +18,17 @@
             if(isset($_POST["image"]) && !empty($_POST["image"])){ //présence d'une image
                 saveArticle($cnx, $_POST["title"], $_POST["link"], $_POST["description"], $_POST["image"]);
                 echo "<p class='centered'>L'article a bien été enregistré ✅</p>";
-                echo '<div class="plus-button"><a href="savedArticles.php">Voir les articles sauvegardés</a></div><br>';
+                echo '<div style="margin-bottom: 20px" class="plus-button"><a href="savedArticles.php">Voir les articles sauvegardés</a></div>';
                 echo '<div class="plus-button"><a href="index.php">Retourner à l\'accueil</a></div>';
             } else { // absence d'une image
                 saveArticle($cnx, $_POST["title"], $_POST["link"], $_POST["description"]);
                 echo "<p class='centered'>L'article a bien été enregistré ✅</p>";
-                echo '<div class="plus-button"><a href="savedArticles.php">Voir les articles sauvegardés</a></div><br>';
+                echo '<div style="margin-bottom: 20px" class="plus-button"><a href="savedArticles.php">Voir les articles sauvegardés</a></div>';
                 echo '<div class="plus-button"><a href="index.php">Retourner à l\'accueil</a></div>';
             }
         } else { // absence d'information du formulaire
             echo "<p class='centered'>Erreur lors de l'envoi du formulaire ❌</p>";
-            echo '<div class="plus-button"><a href="savedArticles.php">Voir les articles sauvegardés</a></div><br>';
+            echo '<div style="margin-bottom: 20px" class="plus-button"><a href="savedArticles.php">Voir les articles sauvegardés</a></div>';
             echo '<div class="plus-button"><a href="index.php">Retourner à l\'accueil</a></div>';
         }
         echo "</div>";

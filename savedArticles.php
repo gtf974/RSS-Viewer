@@ -25,15 +25,13 @@
             echo "<h4>".$value["titre"]."</h4>";
             echo "<p>".$value["description"]."</p>";
             echo '<div class="plus-button"><a href="'.$value["link"].'">Voir plus</a></div>';
-            echo "<form method='POST' action='savedArticles.php'>";
-            echo '<input name="toDelete" type="hidden" value="'.$value["idArticle"].'">'; // input invisible contenant l'id de l'article à peut être supprimer
-            echo "<br><div class='delete-button'><a onclick='javascript:this.parentNode.parentNode.submit()'>Supprimer</a></div>"; // bouton supprimer qui envoie le formulaire
-            echo "</form>";
+            echo "<div style='color:white; margin-top: 20px' data-id='".$value['idArticle']."' class='delete-button delete'>Supprimer</div>";
             if(!empty($value["img"])) echo "<div class='centered'><img src='".$value["img"]."'/></div>"; // absence d'image dans la base de donnée
             echo "</fieldset>";
         }
         echo "</div>";
         displayFooter();
     ?>
+    <script src="delete.js"></script>
 </body>
 </html>
